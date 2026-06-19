@@ -1,10 +1,8 @@
 name: Build and test code
 
 on:
-  pull_request:
-  push:
-    branches:
-      - main
+  # manual-only: prevents auto-running on pushes/PRs so only the release workflow fires
+  workflow_dispatch:
 
 jobs:
   run-tests:

@@ -1,8 +1,7 @@
 name: Contributors
 on:
-  push:
-    branches:
-      - master
+  # manual-only: prevents auto-running on pushes so only the release workflow fires
+  workflow_dispatch:
 jobs:
   contributors:
     runs-on: ubuntu-latest
