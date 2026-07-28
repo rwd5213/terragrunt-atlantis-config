@@ -5,3 +5,9 @@ stack "fargate" {
     foo = "bar"
   }
 }
+
+locals {
+  extra_atlantis_dependencies = [
+    "stack-extra.txt"
+  ]
+}

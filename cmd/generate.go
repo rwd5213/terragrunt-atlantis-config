@@ -123,7 +123,7 @@ func getDependencies(ctx *TerragruntParsingContext, log log.Logger, path string)
 			getDependenciesCache.set(path, getDependenciesOutput{nil, err})
 			return nil, err
 		}
-		if isParent && ignoreParentTerragrunt {
+		if isParent && ignoreParentTerragrunt && filepath.Base(path) != "terragrunt.stack.hcl" {
 			getDependenciesCache.set(path, getDependenciesOutput{nil, nil})
 			return nil, nil
 		}
