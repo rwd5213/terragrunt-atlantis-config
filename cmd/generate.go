@@ -697,11 +697,11 @@ func main(ctx context.Context, log log.Logger) error {
 						}
 
 						if !updateProject {
-							log.Info("Created project for ", terragruntPath)
+							log.Debug("Created project for ", terragruntPath)
 							config.Projects = append(config.Projects, *project)
 						}
 					} else {
-						log.Info("Created project for ", terragruntPath)
+						log.Debug("Created project for ", terragruntPath)
 						config.Projects = append(config.Projects, *project)
 					}
 
@@ -734,7 +734,7 @@ func main(ctx context.Context, log log.Logger) error {
 				lock.Lock()
 				defer lock.Unlock()
 
-				log.Info("Created "+projectHcl+" project for ", workingDir)
+				log.Debug("Created "+projectHcl+" project for ", workingDir)
 				config.Projects = append(config.Projects, *project)
 
 				return nil
